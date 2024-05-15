@@ -46,7 +46,7 @@ with rsk.Client(host='192.168.1.36', key='') as client:
 
     x_speed = abs(np.diff(x_pose_list) / np.diff(x_time))
     print(x_speed)
-
+""
 
     x_acceleration = abs(np.diff(x_speed) / np.diff(x_time[1:]))
 
