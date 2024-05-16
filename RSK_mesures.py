@@ -1,3 +1,4 @@
+# Description: This script is used to record the position of the robot and its speed and acceleration in order to analyze the performance of the robot.
 import rsk
 import numpy as np
 from math import sqrt, atan, tan
@@ -49,7 +50,6 @@ with rsk.Client(host='192.168.1.36', key='') as client:
     x_speed = abs(np.diff(x_pose_list) / np.diff(x_time))
 
     x_acceleration = abs(np.diff(x_speed) / np.diff(x_time[1:]))
-    print(x_acceleration)
 
     #Data smoothing
 
@@ -83,4 +83,3 @@ with rsk.Client(host='192.168.1.36', key='') as client:
     #plt.plot(x_new_time[2:], acceleration_smooth[1:])
     #plt.show()
 
-    
